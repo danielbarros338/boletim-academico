@@ -4,31 +4,34 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 //Components
-import { LoginComponent } from './views/login/login.component';
 import { DashComponent } from './views/dash/dash.component';
 import { NtTableComponent } from './components/nt-table/nt-table.component';
 
+//Module Components
+import { LoginModule } from './views/login/login.module';
+
 //Material Components
-import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card'
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+
+//Directives
 import { StudentsDirective } from './directives/students.directive';
 
 //Providers
 import { StudentsService } from './services/students.service';
 
 
+
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent,
     DashComponent,
     NtTableComponent,
     StudentsDirective
@@ -44,7 +47,8 @@ import { StudentsService } from './services/students.service';
     MatButtonModule,
     MatTableModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    LoginModule
   ],
   providers: [StudentsService, HttpClientModule],
   bootstrap: [AppComponent]

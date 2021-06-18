@@ -1,13 +1,13 @@
 <mat-card class='card-login mat-elevation-z8'>
     <mat-card-title class='login-title'>Login</mat-card-title>
 
-    <form action="http://localhost:4200/dashboard" method="GET" class='form-login'>
+    <form [formGroup]='form' class='form-login'>
 
         <mat-form-field>
-            <input matInput id="input-mat" placeholder="Digite sua matrícula"/>
+            <input formControlName="mat" matInput id="input-mat" placeholder="Digite sua matrícula"/>
         </mat-form-field>
         
-        <button type="submit" mat-raised-button color="basic">Buscar Notas</button>
+        <button (click)="teste(form)" type="submit" mat-raised-button color="basic">Buscar Notas</button>
      </form>
 </mat-card>
 
