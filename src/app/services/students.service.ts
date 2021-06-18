@@ -14,4 +14,9 @@ export class StudentsService {
   listStudents(): Observable<any>{
     return this.http.get("https://boletim-online-api.herokuapp.com/api/v1/boletim/");
   }
+
+  getStudent(mat: any): Observable<any>{
+    console.log(mat.value.mat)
+    return this.http.get(`https://boletim-online-api.herokuapp.com/api/v1/boletim/aluno?matricula=${mat.value.mat}`)
+  }
 }

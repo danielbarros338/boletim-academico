@@ -1,3 +1,4 @@
+import { HttpClientModule } from '@angular/common/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { LoginComponent } from './login.component';
 import { NgModule } from '@angular/core';
@@ -24,7 +25,8 @@ import { MatTableModule } from '@angular/material/table';
     MatInputModule,
     MatButtonModule,
     MatTableModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ]
 })
 export class LoginModule { }
