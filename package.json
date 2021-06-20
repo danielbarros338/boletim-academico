@@ -3,7 +3,8 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
+    "postinstall": "ng build --aot --prod",
     "build": "ng build"
   },
   "private": true,
@@ -18,6 +19,7 @@
     "@angular/platform-browser": "~11.2.9",
     "@angular/platform-browser-dynamic": "~11.2.9",
     "@angular/router": "~11.2.9",
+    "express": "^4.17.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.11.3"
@@ -28,5 +30,9 @@
     "@angular/compiler-cli": "~11.2.9",
     "@types/node": "^12.11.1",
     "typescript": "~4.1.5"
+  },
+  "engines": {
+    "node": "12.22.1",
+    "npm": "7.18.1"
   }
 }
