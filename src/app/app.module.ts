@@ -22,9 +22,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 
-//Directives
-import { StudentsDirective } from './directives/students.directive';
-
 //Providers
 import { StudentsService } from './services/students.service';
 
@@ -34,8 +31,7 @@ import { StudentsService } from './services/students.service';
   declarations: [
     AppComponent,
     DashComponent,
-    NtTableComponent,
-    StudentsDirective
+    NtTableComponent
   ],
   imports: [
     BrowserModule,
