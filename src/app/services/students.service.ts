@@ -36,7 +36,7 @@ export class StudentsService {
   }
 
   _setRec(data: boolean): string{
-    this.student['recup'] ? this.student['recup'] = 'Sim' : this.student['recup'] = '--';
+    this.student['recup'] ? this.student['recup'] = 'Sim' : this.student['recup'] = 'Não';
     return this.student['recup'];
   }
 }

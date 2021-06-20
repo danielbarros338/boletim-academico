@@ -12,18 +12,6 @@
     background-color: #ccc;
 }
 
-.span-container{
-    width: 100%;
-    border-radius: 2px;
-    box-shadow: 0 0 6px #777;
-    background-color: #ccc;
-}
-
-#img-pref{
-    width:10%;
-    margin: 0 15% 0 0;
-}
-
 #card-title{
     text-align: center;
 }
