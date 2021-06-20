@@ -2,6 +2,8 @@ import { StudentsService } from './../../services/students.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
+import { Router } from '@angular/router';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-login',
@@ -11,26 +13,50 @@ import { FormBuilder, FormGroup, FormControl } from '@angular/forms';
 export class LoginComponent implements OnInit {
 
   form: FormGroup = new FormGroup({});
+  err: string = "";
+  student: any;
+  
 
-  constructor(private formBuilder: FormBuilder, private http: HttpClient, private studentsService: StudentsService) {
+  constructor(
+    private formBuilder: FormBuilder, 
+    private http: HttpClient, 
+    private studentsService: StudentsService,
+    private router: Router,
+    private snackBar: MatSnackBar
+    ) {
   }
 
   _convertMat(form: FormGroup): FormGroup{
     form.value['mat'] = Number(form.value['mat']);
 
-    if(typeof form.value['mat'] !== 'number' || !form.value['mat']){
+    if(typeof form.value['mat'] !== 'number' || form.value['mat']){
       console.log("OK");
     } else {
-      console.log("Insira somente números");
+      this.snackBar.open('Matrícula inexistente','Fechar',{
+        duration: 4000,
+        verticalPosition: 'top'
+      });
     }
   
     return form;
   }
 
+  _submitStudent(): void{
+    this.studentsService.setStudent(this.form).subscribe(value => {
+      this.student = value;
+      this.err = "";
+
+      this.studentsService.instanceStudent(this.student);
+
+      this.router.navigate(['/dashboard']);
+    }, err => {
+      this.err = "Matrícula inexistente";
+    })
+  }
+
   onSubmit(): void{
     this._convertMat(this.form);
-
-    this.studentsService.getStudent(this.form).subscribe(value => console.log("matricula existe", value.matricula))
+    this._submitStudent();
   }
 
   ngOnInit(): void {

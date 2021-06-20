@@ -1,7 +1,6 @@
 import { Component, Injectable, OnInit } from '@angular/core';
 
 import { StudentsService } from '../../services/students.service';
-import { Students } from '../../model/students';
 import { NgForm } from '@angular/forms';
 
 @Component({
@@ -11,20 +10,17 @@ import { NgForm } from '@angular/forms';
 })
 export class NtTableComponent implements OnInit {
 
-  students: Array<any> = new Array();
+  student: any;
 
   constructor(private studentsService: StudentsService){}
 
   ngOnInit(){
-    this.listStudents();
+    this.student = this._getStudent();
+    console.log(this.student)
   }
 
-  listStudents(){
-      this.studentsService.listStudents().subscribe( students => {
-        this.students = students;
-      }, err => {
-        console.log("Erro ao listar dados", err);
-      })
+  _getStudent(): any{
+     return this.studentsService.getStudent();
   }
 
 }

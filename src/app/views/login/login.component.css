@@ -16,3 +16,8 @@
 .form-login button{
     width: 70% !important;
 }
+
+.error-div{
+    width: 70%;
+    text-align: center;
+}

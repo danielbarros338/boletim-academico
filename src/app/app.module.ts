@@ -20,6 +20,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatCardModule } from '@angular/material/card'
 import { MatButtonModule } from '@angular/material/button';
 import { MatTableModule } from '@angular/material/table';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 //Directives
 import { StudentsDirective } from './directives/students.directive';
@@ -48,7 +49,8 @@ import { StudentsService } from './services/students.service';
     MatTableModule,
     ReactiveFormsModule,
     HttpClientModule,
-    LoginModule
+    LoginModule,
+    MatSnackBarModule
   ],
   providers: [StudentsService, HttpClientModule],
   bootstrap: [AppComponent]

@@ -1,10 +1,96 @@
-<table >
-    <tr>
-        <th>Matrícula</th>
-        <th>Nome</th>
-    </tr>
-    <tr *ngFor="let student of students">
-        <td>{{student.matricula}}</td>
-        <td>{{student.nome}}</td>
-    </tr>
-</table>
+<mat-card>
+    <mat-card-title id="card-title">
+        <img id="img-pref" src="../../../assets/img/rj_pref.jpeg">
+        Boletim Escolar
+    </mat-card-title>
+    <mat-card-content>
+        <span><strong>Escola:</strong> 0918069 - EM PROFESSORA JUREMA PEÇANHA GIRAUD</span>
+        <br/>
+        <hr/>
+        <span><strong>Nome do Aluno: </strong>{{student.nome}}</span>
+        <br/>
+        <hr/>
+        <span><strong>Etapa de Ensino: </strong>2021 - Ensino Fundamental</span>
+    </mat-card-content>
+</mat-card>
+<br>
+<mat-card>
+    <div class="div-container">
+        <mat-card-title>Médias Bimestrais</mat-card-title>
+        <mat-card-subtitle>1º COC</mat-card-subtitle>
+    </div>
+    
+    <mat-card-content id="container-table">
+        <table id="data-table">
+            <tr>
+                <th>Disciplinas</th>
+                <th>Conc.</th>
+                <th>Nota</th>
+                <th>Faltas</th>
+                <th>Red</th>
+            </tr>
+            <tr>
+                <th>Conceito Global</th>
+                <td>{{student.glb}}</td>
+                <td>{{student.glb}}</td>
+                <td>{{student.freq}} %</td>
+                <td>{{student.recup}}</td>
+            </tr>
+            <tr>
+                <th>Artes Plásticas</th>
+                <td>{{student.art}}</td>
+                <td>{{student.art}}</td>
+                <td>{{student.freq}} %</td>
+                <td>{{student.recup}}</td>
+            </tr>
+            <tr>
+                <th>Ciências</th>
+                <td>{{student.cie}}</td>
+                <td>{{student.cie}}</td>
+                <td>{{student.freq}} %</td>
+                <td>{{student.recup}}</td>
+            </tr>
+            <tr>
+                <th>Educação Física</th>
+                <td>{{student.ef}}</td>
+                <td>{{student.ef}}</td>
+                <td>{{student.freq}} %</td>
+                <td>{{student.recup}}</td>
+            </tr>
+            <tr>
+                <th>Geografia</th>
+                <td>{{student.geo}}</td>
+                <td>{{student.geo}}</td>
+                <td>{{student.freq}} %</td>
+                <td>{{student.recup}}</td>
+            </tr>
+            <tr>
+                <th>História</th>
+                <td>{{student.his}}</td>
+                <td>{{student.his}}</td>
+                <td>{{student.freq}} %</td>
+                <td>{{student.recup}}</td>
+            </tr>
+            <tr>
+                <th>Inglês</th>
+                <td>{{student.ing}}</td>
+                <td>{{student.ing}}</td>
+                <td>{{student.freq}} %</td>
+                <td>{{student.recup}}</td>
+            </tr>
+            <tr>
+                <th>Língua Portuguesa</th>
+                <td>{{student.lp}}</td>
+                <td>{{student.lp}}</td>
+                <td>{{student.freq}} %</td>
+                <td>{{student.recup}}</td>
+            </tr>
+            <tr>
+                <th>Matemática</th>
+                <td>{{student.mat}}</td>
+                <td>{{student.mat}}</td>
+                <td>{{student.freq}} %</td>
+                <td>{{student.recup}}</td>
+        </table>
+    </mat-card-content>
+</mat-card>
