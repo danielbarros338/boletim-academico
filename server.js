@@ -3,10 +3,10 @@ const path = require('path');
 const nameApp = process.env.npm_package_name;
 const app = express();
 
-app.use(express.static(`${__dirname}/src`));
+app.use(express.static(`${__dirname}/dist/frontend`));
 
 app.get("/", (req,res) => {
-    res.sendFile(path.join(`${__dirname}/src/index.html`))
+    res.sendFile('index.html',{root: 'dist/frontend'})
 })
 
 app.listen(process.env.PORT || 8080);
