@@ -29,9 +29,7 @@ export class LoginComponent implements OnInit {
   _convertMat(form: FormGroup): FormGroup{
     form.value['mat'] = Number(form.value['mat']);
 
-    if(typeof form.value['mat'] !== 'number' || form.value['mat']){
-      console.log("OK");
-    } else {
+    if(typeof form.value['mat'] !== 'number' || !form.value['mat']){
       this.snackBar.open('Matrícula inexistente','Fechar',{
         duration: 4000,
         verticalPosition: 'top'

@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpHeaders, HttpErrorResponse, HttpClient } from '@angular/common/http';
 import { Observable, throwError } from 'rxjs';
 import { retry, catchError } from 'rxjs/operators';
+import { Student } from './../model/student';
 
 @Injectable({
   providedIn: 'root'
@@ -21,9 +22,8 @@ export class StudentsService {
   }
 
   instanceStudent(student: any): void {
-    this.student = student;
-    this._percent(this.student['freq']);
-    this._setRec(this.student['recup']);
+    this.student = new Student(student);
+    this._percent(this.student.frequency);
   }
 
   getStudent(): any {
@@ -33,10 +33,5 @@ export class StudentsService {
   _percent(data: number): string{
     this.student['freq'] = data.toString();
     return this.student['freq'];
-  }
-
-  _setRec(data: boolean): string{
-    this.student['recup'] ? this.student['recup'] = 'Sim' : this.student['recup'] = 'Não';
-    return this.student['recup'];
   }
 }

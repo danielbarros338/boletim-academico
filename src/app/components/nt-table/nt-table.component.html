@@ -6,7 +6,7 @@
         <span><strong>Escola:</strong> 0918069 - EM PROFESSORA JUREMA PEÇANHA GIRAUD</span>
         <br/>
         <hr/>
-        <span><strong>Nome do Aluno: </strong>{{student.nome}}</span>
+        <span><strong>Nome do Aluno: </strong>{{student.name}}</span>
         <br/>
         <hr/>
         <span><strong>Etapa de Ensino: </strong>2021 - Ensino Fundamental</span>
@@ -26,70 +26,70 @@
                 <th>Conc.</th>
                 <th>Nota</th>
                 <th>Faltas</th>
-                <th>Red</th>
+                <th>Rec</th>
             </tr>
             <tr>
                 <th>Conceito Global</th>
-                <td>{{student.glb}}</td>
-                <td>{{student.glb}}</td>
-                <td>{{student.freq}} %</td>
-                <td>{{student.recup}}</td>
+                <td>{{student.matObj[0].global}}</td>
+                <td>{{student.matObj[0].global}}</td>
+                <td>{{student.frequency}} %</td>
+                <td>{{student.matObj[0].rec}}</td>
             </tr>
             <tr>
-                <th>Artes Plásticas</th>
-                <td>{{student.art}}</td>
-                <td>{{student.art}}</td>
+                <th>Artes</th>
+                <td>{{student.matObj[7].artes}}</td>
+                <td>{{student.matObj[7].artes}}</td>
                 <td>{{student.freq}} %</td>
-                <td>{{student.recup}}</td>
+                <td>{{student.matObj[7].rec}}</td>
             </tr>
             <tr>
                 <th>Ciências</th>
-                <td>{{student.cie}}</td>
-                <td>{{student.cie}}</td>
+                <td>{{student.matObj[1].ciencias}}</td>
+                <td>{{student.matObj[1].ciencias}}</td>
                 <td>{{student.freq}} %</td>
-                <td>{{student.recup}}</td>
+                <td>{{student.matObj[1].rec}}</td>
             </tr>
             <tr>
                 <th>Educação Física</th>
-                <td>{{student.ef}}</td>
-                <td>{{student.ef}}</td>
+                <td>{{student.matObj[2].edfisica}}</td>
+                <td>{{student.matObj[2].edfisica}}</td>
                 <td>{{student.freq}} %</td>
-                <td>{{student.recup}}</td>
+                <td>{{student.matObj[2].rec}}</td>
             </tr>
             <tr>
                 <th>Geografia</th>
-                <td>{{student.geo}}</td>
-                <td>{{student.geo}}</td>
+                <td>{{student.matObj[3].geografia}}</td>
+                <td>{{student.matObj[3].geografia}}</td>
                 <td>{{student.freq}} %</td>
-                <td>{{student.recup}}</td>
+                <td>{{student.matObj[3].rec}}</td>
             </tr>
             <tr>
                 <th>História</th>
-                <td>{{student.his}}</td>
-                <td>{{student.his}}</td>
+                <td>{{student.matObj[4].historia}}</td>
+                <td>{{student.matObj[4].historia}}</td>
                 <td>{{student.freq}} %</td>
-                <td>{{student.recup}}</td>
+                <td>{{student.matObj[4].rec}}</td>
             </tr>
             <tr>
                 <th>Inglês</th>
-                <td>{{student.ing}}</td>
-                <td>{{student.ing}}</td>
+                <td>{{student.matObj[8].ingles}}</td>
+                <td>{{student.matObj[8].ingles}}</td>
                 <td>{{student.freq}} %</td>
-                <td>{{student.recup}}</td>
+                <td>{{student.matObj[8].rec}}</td>
             </tr>
             <tr>
                 <th>Língua Portuguesa</th>
-                <td>{{student.lp}}</td>
-                <td>{{student.lp}}</td>
+                <td>{{student.matObj[5].portugues}}</td>
+                <td>{{student.matObj[5].portugues}}</td>
                 <td>{{student.freq}} %</td>
-                <td>{{student.recup}}</td>
+                <td>{{student.matObj[5].rec}}</td>
             </tr>
             <tr>
                 <th>Matemática</th>
-                <td>{{student.mat}}</td>
-                <td>{{student.mat}}</td>
+                <td>{{student.matObj[6].matematica}}</td>
+                <td>{{student.matObj[6].matematica}}</td>
                 <td>{{student.freq}} %</td>
-                <td>{{student.recup}}</td>
+                <td>{{student.matObj[6].rec}}</td>
         </table>
     </mat-card-content>
 </mat-card>

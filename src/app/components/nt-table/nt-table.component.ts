@@ -16,7 +16,6 @@ export class NtTableComponent implements OnInit {
 
   ngOnInit(){
     this.student = this._getStudent();
-    console.log(this.student)
   }
 
   _getStudent(): any{
