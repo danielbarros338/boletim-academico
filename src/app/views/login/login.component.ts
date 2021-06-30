@@ -26,6 +26,21 @@ export class LoginComponent implements OnInit {
     ) {
   }
 
+  ngOnInit(): void {
+    /*
+      outra forma
+
+      this.form = new FormGroup({
+        name: new FormControl(null)
+      })
+    */
+    this.form = this.formBuilder.group({
+      mat:[null]
+    })
+
+    this._snackCall();
+  }
+
   _convertMat(form: FormGroup): FormGroup{
     form.value['mat'] = Number(form.value['mat']);
 
@@ -63,17 +78,11 @@ export class LoginComponent implements OnInit {
     document.cookie = `mat=${form.value['mat']}; path="/";` //cookie
   }
 
-  ngOnInit(): void {
-    /*
-      outra forma
-
-      this.form = new FormGroup({
-        name: new FormControl(null)
-      })
-    */
-    this.form = this.formBuilder.group({
-      mat:[null]
+  _snackCall(): void {
+    this.snackBar.open(`Esse site utiliza cookies
+    para oferecer uma melhor experiência de navegação.
+    Clicando em OK você aceita nossa política de privacidade.`,'OK',{
+      verticalPosition:"top"
     })
   }
-
 }
