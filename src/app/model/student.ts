@@ -1,10 +1,10 @@
 export class Student {
-    public id: Number;
-    public mat: Number;
-    public numClass: Number;
-    public name: string;
-    public frequency: Number;
-    public matObj: Object;
+    private id: Number;
+    private mat: Number;
+    private numClass: Number;
+    private name: string;
+    private frequency: Number;
+    private matObj: Array<any>;
 
     constructor(private json: any){
         this.id = json['id'];
@@ -14,31 +14,31 @@ export class Student {
         this.name = json['nome'];
         this.matObj = [
             {
-                global: json['glb'],
+                mat: json['glb'],
                 rec: this._rec(json['glb'])
             },{
-                ciencias: json['cie'],
+                mat: json['cie'],
                 rec: this._rec(json['cie'])
             },{
-                edfisica: json['ef'],
+                mat: json['ef'],
                 rec: this._rec(json['ef'])
             },{
-                geografia: json['geo'],
+                mat: json['geo'],
                 rec: this._rec(json['geo'])
             },{
-                historia: json['his'],
+                mat: json['his'],
                 rec: this._rec(json['his'])
             },{
-                portugues: json['lp'],
+                mat: json['lp'],
                 rec: this._rec(json['lp'])
             },{
-                matematica: json['mat'],
+                mat: json['mat'],
                 rec: this._rec(json['mat'])
             },{
-                artes: json['art'],
+                mat: json['art'],
                 rec: this._rec(json['art'])
             },{
-                ingles: json['ing'],
+                mat: json['ing'],
                 rec: this._rec(json['ing'])
             }
         ]
@@ -47,5 +47,33 @@ export class Student {
     _rec(gradePoint: string): string{
        if(gradePoint === "RI") return "SIM";
        return "--";
+    }
+
+    getId(): Number{
+        return this.id;
+    }
+
+    getMat(): Number{
+        return this.mat;
+    }
+
+    getNumClass(): Number{
+        return this.numClass;
+    }
+
+    getName(): string{
+        return this.name;
+    }
+
+    getFrequency(): Number{
+        return this.frequency;
+    }
+
+    getGrade(id: number): any{
+        return this.matObj[id].mat;
+    }
+
+    getRec(id: number): any{
+        return this.matObj[id].rec;
     }
 }
