@@ -9,4 +9,8 @@ app.get("/", (req,res) => {
     res.sendFile('index.html',{root: 'dist/frontend'})
 })
 
+app.get("/dashboard", (req,res) => {
+    res.sendFile('index.html',{root: 'dist/frontend'})
+})
+
 app.listen(process.env.PORT || 8080);
