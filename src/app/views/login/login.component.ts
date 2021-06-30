@@ -46,6 +46,8 @@ export class LoginComponent implements OnInit {
 
       this.studentsService.instanceStudent(this.student);
 
+      this._cookie(this.form) //cookie
+
       this.router.navigate(['/dashboard']);
     }, err => {
       this.err = "Matrícula inexistente";
@@ -55,6 +57,10 @@ export class LoginComponent implements OnInit {
   onSubmit(): void{
     this._convertMat(this.form);
     this._submitStudent();
+  }
+
+  _cookie(form: FormGroup): void{
+    document.cookie = `mat=${form.value['mat']}; path="/";` //cookie
   }
 
   ngOnInit(): void {
