@@ -13,7 +13,7 @@ export class DashComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onClick(): any{ //Cookie
+  onClick(): any{
     let date = new Date(2010,0,1);
     let dateString = date.toUTCString();
     

@@ -19,7 +19,6 @@ export class LoginComponent implements OnInit {
 
   constructor(
     private formBuilder: FormBuilder, 
-    private http: HttpClient, 
     private studentsService: StudentsService,
     private router: Router,
     private snackBar: MatSnackBar
@@ -27,13 +26,6 @@ export class LoginComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    /*
-      outra forma
-
-      this.form = new FormGroup({
-        name: new FormControl(null)
-      })
-    */
     this.form = this.formBuilder.group({
       mat:[null]
     })
@@ -61,7 +53,7 @@ export class LoginComponent implements OnInit {
 
       this.studentsService.instanceStudent(this.student);
 
-      this._cookie(this.form) //cookie
+      this._cookie(this.form)
 
       this.router.navigate(['/dashboard']);
     }, err => {
@@ -75,7 +67,7 @@ export class LoginComponent implements OnInit {
   }
 
   _cookie(form: FormGroup): void{
-    document.cookie = `mat=${form.value['mat']}; path="/";` //cookie
+    document.cookie = `mat=${form.value['mat']}; path="/";`
   }
 
   _snackCall(): void {

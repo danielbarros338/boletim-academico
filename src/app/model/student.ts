@@ -1,44 +1,44 @@
 export class Student {
     private id: Number;
-    private mat: Number;
+    private registration: Number;
     private numClass: Number;
     private name: string;
     private frequency: Number;
-    private matObj: Array<any>;
+    private registrationArr: Array<any>;
 
     constructor(private json: any){
         this.id = json['id'];
-        this.mat = json['matricula'];
+        this.registration = json['matricula'];
         this.numClass = json['turma'];
         this.frequency = json['freq'];
         this.name = json['nome'];
-        this.matObj = [
+        this.registrationArr = [
             {
-                mat: json['glb'],
+                matter: json['glb'],
                 rec: this._rec(json['glb'])
             },{
-                mat: json['cie'],
+                matter: json['cie'],
                 rec: this._rec(json['cie'])
             },{
-                mat: json['ef'],
+                matter: json['ef'],
                 rec: this._rec(json['ef'])
             },{
-                mat: json['geo'],
+                matter: json['geo'],
                 rec: this._rec(json['geo'])
             },{
-                mat: json['his'],
+                matter: json['his'],
                 rec: this._rec(json['his'])
             },{
-                mat: json['lp'],
+                matter: json['lp'],
                 rec: this._rec(json['lp'])
             },{
-                mat: json['mat'],
+                matter: json['mat'],
                 rec: this._rec(json['mat'])
             },{
-                mat: json['art'],
+                matter: json['art'],
                 rec: this._rec(json['art'])
             },{
-                mat: json['ing'],
+                matter: json['ing'],
                 rec: this._rec(json['ing'])
             }
         ]
@@ -54,7 +54,7 @@ export class Student {
     }
 
     getMat(): Number{
-        return this.mat;
+        return this.registration;
     }
 
     getNumClass(): Number{
@@ -70,10 +70,10 @@ export class Student {
     }
 
     getGrade(id: number): any{
-        return this.matObj[id].mat;
+        return this.registrationArr[id].matter;
     }
 
     getRec(id: number): any{
-        return this.matObj[id].rec;
+        return this.registrationArr[id].rec;
     }
 }

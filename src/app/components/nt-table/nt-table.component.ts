@@ -20,7 +20,6 @@ export class NtTableComponent implements OnInit {
 
   ngOnInit(){
 
-    // Cookie
     if(!this._getCookie()) this.router.navigate(['/']);
 
     if(!this.student && document.cookie){
@@ -29,7 +28,6 @@ export class NtTableComponent implements OnInit {
         this.student = this._getStudent();
       })
     }
-    //End cookie
 
     this.student = this._getStudent();
   }
@@ -38,7 +36,7 @@ export class NtTableComponent implements OnInit {
      return this.studentsService.getStudent();
   }
 
-  _getCookie(): any{ //Cookie
+  _getCookie(): any{ 
     if(document.cookie === '') return false
 
     const cookie = document.cookie.split('=');

@@ -10,15 +10,17 @@ import { Student } from './../model/student';
 export class StudentsService {
 
   student: any;
+  api: string = "https://boletim-online-api.herokuapp.com/api/v1/boletim/"
+  apiQuery: string = "https://boletim-online-api.herokuapp.com/api/v1/boletim/aluno?matricula="
 
   constructor(private http: HttpClient){}
 
   listStudents(): Observable<any>{
-    return this.http.get("https://boletim-online-api.herokuapp.com/api/v1/boletim/");
+    return this.http.get(this.api);
   }
 
-  setStudent(mat: any): Observable<any>{
-    return this.http.get(`https://boletim-online-api.herokuapp.com/api/v1/boletim/aluno?matricula=${mat.value.mat}`)
+  setStudent(registration: any): Observable<any>{
+    return this.http.get(`${this.apiQuery}${registration.value.mat}`)
   }
 
   instanceStudent(student: any): void {
